@@ -4,11 +4,19 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
-html, body{
+body{
 	margin:0;
 	font-size: 100%;
 	font-family: 'Lato', sans-serif;
 	background: #fff;
+	height: 100%;
+}
+html{
+	margin:0;
+	font-size: 100%;
+	font-family: 'Lato', sans-serif;
+	background: #fff;
+	height: 100%;
 }
 body a {
 	text-decoration:none;
@@ -93,7 +101,7 @@ header {
 .w3_navigation_pos {
     position: absolute;
     top: 7%;
-    left: 36.6%;
+    left: 30.6%;
     z-index: 999;
 }
 .w3_navigation_pos h1 a{
@@ -472,7 +480,7 @@ label.icon-search span {
     text-decoration: none;
     color: #faf8f7;
     font-size: 41px;
-    left: 0.4em;
+    left: 0.2em;
 }
 .w3_navigation_pos span {
     color: #fd6239;
@@ -2585,14 +2593,25 @@ h2.typoh2{
     text-align: center;
    background: #191818;
     padding: 20px 0px;
+    bottom: 0px;
 }
 /*-- //footer --*/
+/*-- //Customization--*/
 
-
+.wrapper{
+	min-height: 100%;
+	position:relative;
+}
+.content{
+	padding-bottom: 60px;/*height of footer*/
+}
 /*-- Copyright --*/
 .copyright-wthree {
+	position: absolute;
+	bottom : 0px;
     background: #000;
-	 padding: 20px 0px;
+	padding: 0px 0px;
+	height: 60px;
 }
 .copyright-wthree p {
     color: #fff;
@@ -2712,19 +2731,19 @@ h2.typoh2{
 }
 @media(max-width:1280px){
 	.w3_navigation_pos h1 a {
-		font-size: 37px;
+		font-size: 35px;
 	}
 	.w3_navigation_pos span {
-		font-size: 62px;
+		font-size: 58px;
 	}
 	.w3_navigation_pos {
-		left: 38.6%;
+		left: 30.6%;
 	}
 	.banner-text h2 {
 		font-size: 35px;
 	}
 	.banner-text {
-		padding: 4em 0 0 0;
+		padding: 2em 0 0 0;
 	}
 	.banner {
 		min-height: 640px;
@@ -2784,7 +2803,7 @@ h2.typoh2{
 		margin: 1.2em .6em;
 	}
 	.w3_navigation_pos {
-		left: 35.6%;
+		left: 30.6%;
 		top: 1%;
 	}
 	.banner-text h2 {
@@ -2941,7 +2960,7 @@ h2.typoh2{
 		font-size: 30px;
 	}
 	.w3_navigation_pos {
-		left: 37%;
+		left: 27%;
 	}
 	.book-form p {
 		font-size: 19px;
@@ -2982,13 +3001,13 @@ h2.typoh2{
 		font-size: 55px;
 	}
 	.navbar-nav > li:nth-child(3) {
-		margin-right: 17em !important;
+		margin-right: 6em !important;
 	}
 	.menu__list {
-		margin-left: 16px;
+		margin-left: 4px;
 	}
 	.w3_navigation_pos {
-		left: 38.5%;
+		left: 28.5%;
 	}
 	.tittle-w3 {
 		font-size: 1.5em;
@@ -3067,7 +3086,7 @@ h2.typoh2{
 		font-size: 22px;
 	}
 	.w3_navigation_pos {
-		left: 36.6%;
+		left: 34.6%;
 		top: 4%;
 	}
 	.form-time-w3layouts,.form-date-w3-agileits,.form-left-agileits-w3layouts,.form-left-agileits-submit{
@@ -3398,7 +3417,7 @@ h2.typoh2{
 		font-size: 48px;
 	}
 	.w3_navigation_pos {
-		left: 37.2%;
+		left: 34.2%;
 		top: 8%;
 	}
 	.form-time-w3layouts, .form-date-w3-agileits, .form-left-agileits-w3layouts, .form-left-agileits-submit {

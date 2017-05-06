@@ -22,13 +22,18 @@
 			<h3 class="tittle-w3"><span>Always</span> fresh <span>& </span>delicious <span>food</span></h3>
 			<p class="para-w3l">Gourmet is a full-service catering and event planning company dedicated to providing you with exquisite cuisine and fantastic customer service. We offer a variety of menus and design options, for everything from box lunches to full-service plated dinners.</p>
 			<div class="services-left-w3-agile">
-				<h3 class="tittle-w3 sub-head"><span>Our </span>Menu</h3>
+				<h3 class="tittle-w3 sub-head"><span>Our </span>Categories</h3>
 				<ul>
-					<li><i class="fa fa-check" aria-hidden="true"></i>BEVERAGES</li>
-					<li><i class="fa fa-check" aria-hidden="true"></i>BREAKFASTS</li>
-					<li><i class="fa fa-check" aria-hidden="true"></i>LUNCH BUFFETS</li>
-					<li><i class="fa fa-check" aria-hidden="true"></i>DINNER BUFFETS</li>
-					<li><i class="fa fa-check" aria-hidden="true"></i>PARTY TRAYS</li>
+				
+				
+				<c:forEach items="${categories}" var="category">
+				<li><i class="fa fa-check" aria-hidden="true"></i><a href="${contextRoot}/show/category/${category.catid}/products">${category.catname}</a></c:forEach>
+				
+				
+				<!-- <c:forEach var = "i" begin = "1" end = "5">
+				<li><i class="fa fa-check" aria-hidden="true"></i>Category <c:out value = "${i}"/></li>
+				</c:forEach>-->
+					
 				</ul>
 				</div>
 				<div class="services-right-w3-agile">

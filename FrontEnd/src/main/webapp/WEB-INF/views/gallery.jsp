@@ -17,7 +17,7 @@
 <body>
 <!-- gallery -->
 	<div class="gallery-ban" id="gallery">
-	<div class="container">
+	<div class="container" id="galleryTop">
 				<ul id="flexiselDemo1">			
 					<li>
 						<div class="wthree_testimonials_grid_main">
@@ -57,8 +57,93 @@
 					</li>
 				</ul>
 				
+	</div><br><br><br><br>
+	<!-- List Products -->
+	<div class="container">
+	<div class="row">
+	<div class="col-md-3">
+	<!-- Side Category bar -->
+	<h3 class="tittle-w3 sub-head">Our Categories</h3>
+				<ul class="list-unstyled">
+	<c:forEach items="${categories}" var="category">
+				<li><i class="fa fa-check" aria-hidden="true"></i><a href="${contextRoot}/show/category/${category.catid}/products">${category.catname}</a></li></c:forEach>
+	</ul></div>
+	<!-- For Products -->
+	<div class="col-md-9">
+	<!-- Adding breadcrumb -->
+		<div class="row">
+		<div class="col-lg-12">
+		<c:if test="${userClickAllProducts == true}">
+		<ol class="breadcrumb">
+		<li><a href="${contextRoot}/main">Home</a></li>
+		<li class="active">All Products</li>
+		</ol>
+		</c:if>
+		<c:if test="${userClickCategoryProducts == true}">
+		<ol class="breadcrumb">
+		<li><a href="${contextRoot}/main">Home</a></li>
+		<li class="active">Category</li>
+		<li class="active">${category.catname}</li>
+		</ol>
+		</c:if>
+		
+		</div></div>
+	
 	</div>
+	</div></div>
 	</div>
-	<!-- //gallery -->
+	<!-- //gallery --><br><br><br><br><br><br><br><br><br><br><br><br>
+	<a href="#gallery" class="scroll" id="toTop" style="display: block;">
+		<span id="toTopHover" style="opacity: 1;"> </span></a>  
+	<script type="text/javascript" src="${js}/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="${js}/numscroller-1.0.js"></script>
+	<script src="${js}/particles.js"></script>
+	<script src="${js}/app.js"></script>
+	<!--gallery-->
+	<script type="text/javascript">
+		$(window).load(function() {
+			$("#flexiselDemo1").flexisel({
+				visibleItems : 4,
+				animationSpeed : 1000,
+				autoPlay : true,
+				autoPlaySpeed : 3000,
+				pauseOnHover : true,
+				enableResponsiveBreakpoints : true,
+				responsiveBreakpoints : {
+					portrait : {
+						changePoint : 480,
+						visibleItems : 1
+					},
+					landscape : {
+						changePoint : 640,
+						visibleItems : 2
+					},
+					tablet : {
+						changePoint : 768,
+						visibleItems : 3
+					}
+				}
+			});
+
+		});
+	</script>
+	<script type="text/javascript" src="${js}/jquery.flexisel.js"></script>
+	<!--gallery-->
+	<!-- Dropdown-Menu-JavaScript -->
+	<script>
+		$(document).ready(function() {
+			$(".dropdown").hover(function() {
+				$('.dropdown-menu', this).stop(true, true).slideDown("fast");
+				$(this).toggleClass('open');
+			}, function() {
+				$('.dropdown-menu', this).stop(true, true).slideUp("fast");
+				$(this).toggleClass('open');
+			});
+		});
+	</script>
+	<!-- //Dropdown-Menu-JavaScript -->
+	
+	
+
 </body>
 </html>

@@ -1,8 +1,13 @@
 package com.atul.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.atul.BackEnd.dao.CategoryDAO;
+import com.atul.BackEnd.dto.Category;
 
 @Controller
 public class PageController 
@@ -12,6 +17,8 @@ public class PageController
 	//{
 	//	return "page";
 	//}
+   @Autowired
+   private CategoryDAO categoryDAO;
    
    @RequestMapping(value= {"/","/home","/index"})
    public ModelAndView index()
@@ -29,12 +36,29 @@ public class PageController
 	 mv.addObject("userClickAbout",true);
 	 return mv;
    }
-   @RequestMapping(value= "/gallery")
-   public ModelAndView gallery()
+   @RequestMapping(value= "/show/all/products")
+   public ModelAndView showAllProducts()
    {
 	 ModelAndView mv=new ModelAndView("page");
 	 mv.addObject("title","Gallery");
-	 mv.addObject("userClickGallery",true);
+	//passing list of category
+     mv.addObject("categories",categoryDAO.list());
+	 mv.addObject("userClickAllProducts",true);
+	 return mv;
+   }
+   @RequestMapping(value= "/show/category/{id}/products")
+   public ModelAndView showCategoryProducts(@PathVariable("id") int id)
+   {
+	 ModelAndView mv=new ModelAndView("page");
+	 //category DAO to fetch single category
+	 Category category =null;
+	 category = categoryDAO.get(id);
+	 mv.addObject("title",category.getCatname());
+	//passing list of category
+     mv.addObject("categories",categoryDAO.list());
+   //passing single category
+     mv.addObject("category",category);
+	 mv.addObject("userClickCategoryProducts",true);
 	 return mv;
    }
    @RequestMapping(value= "/contact")
@@ -45,11 +69,13 @@ public class PageController
 	 mv.addObject("userClickContact",true);
 	 return mv;
    }
-   @RequestMapping(value= "/service")
+   @RequestMapping(value= {"/services","service"})
    public ModelAndView service()
    {
 	 ModelAndView mv=new ModelAndView("page");
 	 mv.addObject("title","Service");
+	//passing list of category
+     mv.addObject("categories",categoryDAO.list());
 	 mv.addObject("userClickService",true);
 	 return mv;
    }
@@ -77,6 +103,13 @@ public class PageController
 	 mv.addObject("userClickBook",true);
 	 return mv;
    }
-
+   @RequestMapping(value= "/regst")
+   public ModelAndView regst()
+   {
+	 ModelAndView mv=new ModelAndView("page");
+	 mv.addObject("title","Sign up form");
+	 mv.addObject("userClickRegst",true);
+	 return mv;
+   }
 
 }

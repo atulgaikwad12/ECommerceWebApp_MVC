@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.atul.BackEnd.dao.CategoryDAO;
+import com.atul.BackEnd.dao.ProductDAO;
 import com.atul.BackEnd.dto.Category;
+import com.atul.BackEnd.dto.Product;
 
 @Controller
 public class PageController 
@@ -20,6 +22,8 @@ public class PageController
    @Autowired
    private CategoryDAO categoryDAO;
    
+   @Autowired
+   private ProductDAO productDAO;
    @RequestMapping(value= {"/","/home","/index"})
    public ModelAndView index()
    {
@@ -40,7 +44,7 @@ public class PageController
    public ModelAndView showAllProducts()
    {
 	 ModelAndView mv=new ModelAndView("page");
-	 mv.addObject("title","Gallery");
+	 mv.addObject("title","Menu Items");
 	//passing list of category
      mv.addObject("categories",categoryDAO.list());
 	 mv.addObject("userClickAllProducts",true);
@@ -73,17 +77,17 @@ public class PageController
    public ModelAndView service()
    {
 	 ModelAndView mv=new ModelAndView("page");
-	 mv.addObject("title","Service");
+	 mv.addObject("title","Our Services");
 	//passing list of category
      mv.addObject("categories",categoryDAO.list());
 	 mv.addObject("userClickService",true);
 	 return mv;
    }
-   @RequestMapping(value= "/blogs")
+   @RequestMapping(value= "/categories")
    public ModelAndView blogs()
    {
 	 ModelAndView mv=new ModelAndView("page");
-	 mv.addObject("title","Blogs Page");
+	 mv.addObject("title","Categories Page");
 	 mv.addObject("userClickBlog",true);
 	 return mv;
    }
@@ -91,7 +95,7 @@ public class PageController
    public ModelAndView main()
    {
 	 ModelAndView mv=new ModelAndView("page");
-	 mv.addObject("title","Main Page");
+	 mv.addObject("title","Home Page");
 	 mv.addObject("userClickMain",true);
 	 return mv;
    }
@@ -109,6 +113,23 @@ public class PageController
 	 ModelAndView mv=new ModelAndView("page");
 	 mv.addObject("title","Sign up form");
 	 mv.addObject("userClickRegst",true);
+	 return mv;
+   }
+   
+   @RequestMapping(value= "/show/{id}/product")
+   public ModelAndView shoSingleProduct(@PathVariable("id") int id)
+   {
+	 ModelAndView mv=new ModelAndView("page");
+	 //product DAO to fetch single category
+	 Product product =null;
+	 product = productDAO.get(id);
+	 //Updating views of product
+	product.setViews(product.getViews()+1);
+	productDAO.update(product);
+	//-------------------------
+	mv.addObject("title",product.getName());
+	mv.addObject("product",product);
+	mv.addObject("userClickShowProduct",true);
 	 return mv;
    }
 

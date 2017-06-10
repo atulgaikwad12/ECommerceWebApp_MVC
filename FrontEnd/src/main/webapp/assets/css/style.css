@@ -106,7 +106,7 @@ header {
 }
 .w3_navigation_pos h1 a{
 	font-size: 1.1em;
-    color: #212121;
+    color: #fa3d03;
     text-decoration: none;
     display: block;
 }
@@ -174,7 +174,7 @@ header {
 
 .menu--miranda .menu__link:hover,
 .menu--miranda .menu__link:focus {
-	color: #929292;
+	color: ##fa3d03;
 }
 
 .menu--miranda .menu__item--current .menu__link {
@@ -403,7 +403,7 @@ header {
 }
 /*--search--*/
 .search label.icon-search {
-    color: #212121;
+    color: #fa3d03;
 	cursor: pointer;
 }
 .search_form{
@@ -519,7 +519,7 @@ label.icon-search span {
 }
 .book-form input[type="text"],.book-form input[type="date"],.book-form input[type="time"],.book-form input[type="email"] {
       width: 100%;
-    color: #9a9797;
+    color: #fa3d03;
     outline: none;
     font-size: 0.9em;
     line-height: 25px;
@@ -573,7 +573,7 @@ label.icon-search span {
     line-height: 25px;
     border-radius: 0;
     background: none;
-    color: #9a9797;
+    color: #fa3d03;
     border: 2px solid #fff;
 	box-shadow:none!important;
 }
@@ -612,7 +612,7 @@ label.icon-search span {
     margin-left: 0px;
 }
 .modal-content p {
-    color: #000;
+    color: #fa3d03;
     font-size: 14px;
     line-height: 28px;
     letter-spacing: 0.2px;
@@ -719,7 +719,7 @@ div#gallery {
     text-align: center;
 }
 p.para-w3l {
-    color: #555;
+    color: #fa3d03;
     line-height: 2.2em;
     margin: 0em auto 2.2em;
     width: 90%;
@@ -778,7 +778,7 @@ padding: 0;
 	color:#fff;
 }
 .ab-w3-agile-info-text  p,.agitsworkw3ls-grid p{
-	color:#b9b7b7;
+	color:#fa3d03;
 }
 .ab-w3-agile-part {
     padding: 0;
@@ -787,7 +787,7 @@ padding: 0;
 }
 .ab-w3-agile-part h4 {
     font-size: 1.5em;
-    color: #000;
+    color: #fa3d03;
     letter-spacing: 1px;
     line-height: 35px;
 	text-align: center;
@@ -829,7 +829,7 @@ padding: 0;
     text-align: center;
     padding-bottom: 48px;
     font-weight: bold;
-	color: #333;
+	color: #fa3d03;
 }
 .agile-blog1 img {
     float: left;
@@ -860,13 +860,13 @@ padding: 0;
 	line-height: 46px;
 }
 .text-w3 h4,.text-w3l h4 {
-    color: black;
+    color: #fa3d03;
     font-size: 2em;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 .text-w3 h4 a,.text-w3l h4 a {
-    color: #333 !important;
+    color: #fa3d03 !important;
     text-decoration: none;
 }
 .view {
@@ -1054,7 +1054,7 @@ canvas.particles-js-canvas-el{
     text-transform: capitalize!important;
     font-size: 14px;
     display: block;
-    color: #9c9a9a;
+    color: #fa3d03;
 }
 .agitsworkw3ls-grid ul {
     margin: 0 6.5em;
@@ -1200,7 +1200,7 @@ h3.tittle.two {
     border-top: 5px solid #fd6239;
 }
 .gallery-grid1 .p-mask .p-desc{
-    color: #a3a3a3;
+    color: #fa3d03;
     position: relative;
     display: block;
     margin-bottom: 10px;
@@ -2300,7 +2300,7 @@ h4.side-t-w3l-agile {
 /*-- typography --*/
 h3.hdg {
     font-size: 2.5em;
-	color:#000 !important;
+	color:#fa3d03 !important;
 }
 .show-grid [class^=col-] {
     background: #fff;
@@ -2316,7 +2316,7 @@ h3.hdg {
 	margin-bottom:2em;
 }
 .xs h3, h3.m_1{
-	color:#000;
+	color:#fa3d03;
 	font-size:1.7em;
 	font-weight:300;
 	margin-bottom: 1em;
@@ -2523,7 +2523,7 @@ h2.typoh2{
 
 .grid_5 h3, .grid_5 h2, .grid_5 h1, .grid_5 h4, .grid_5 h5, h3.hdg, h3.bars {
     margin-bottom: 1em;
-    color: #212121;
+    color: #fa3d03;
     font-weight: bold;
 }
 /*-- //typography --*/
@@ -2597,7 +2597,11 @@ h2.typoh2{
 }
 /*-- //footer --*/
 /*-- //Customization--*/
-
+.dataTableImg{
+	
+	width: 20px;
+	height: 20px;
+}
 .wrapper{
 	min-height: 100%;
 	position:relative;

@@ -7,6 +7,7 @@
 <!-- //for-mobile-apps -->
 <link href="${css}/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="${css}/font-awesome.css" rel="stylesheet"> 
+<link href="${css}/items.css" rel="stylesheet"> 
 <link href="${css}/style.css" rel="stylesheet" type="text/css" media="all" />
 <!--web-fonts-->
 <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
@@ -15,49 +16,7 @@
 <!--//web-fonts-->
 </head>
 <body>
-<!-- gallery -->
-	<div class="gallery-ban" id="gallery">
-	<div class="container" id="galleryTop">
-				<ul id="flexiselDemo1">			
-					<li>
-						<div class="wthree_testimonials_grid_main">
-							
-									<img src="${images}/p1.jpg" alt=" " class="img-responsive" />
-						</div>
-					</li>
-					<li>
-						<div class="wthree_testimonials_grid_main">
-							
-									<img src="${images}/p2.jpg" alt=" " class="img-responsive" />
-						</div>
-					</li>
-					<li>
-						<div class="wthree_testimonials_grid_main">
-						
-									<img src="${images}/p3.jpg" alt=" " class="img-responsive" />
-						</div>
-					</li>
-					<li>
-						<div class="wthree_testimonials_grid_main">
-						
-									<img src="${images}/p6.jpg" alt=" " class="img-responsive" />
-						</div>
-					</li>
-					<li>
-						<div class="wthree_testimonials_grid_main">
-						
-									<img src="${images}/p4.jpg" alt=" " class="img-responsive" />
-						</div>
-					</li>
-					<li>
-						<div class="wthree_testimonials_grid_main">
-						
-									<img src="${images}/p5.jpg" alt=" " class="img-responsive" />
-						</div>
-					</li>
-				</ul>
-				
-	</div><br><br><br><br>
+<br><br><br><br>
 	<!-- List Products -->
 	<div class="container">
 	<div class="row">
@@ -72,14 +31,22 @@
 	<div class="col-md-9">
 	<!-- Adding breadcrumb -->
 		<div class="row">
-		<div class="col-lg-12">
+		 <div class="col-lg-12">
 		<c:if test="${userClickAllProducts == true}">
+		<script>
+		window.categoryId = '';
+		</script>
 		<ol class="breadcrumb">
 		<li><a href="${contextRoot}/main">Home</a></li>
 		<li class="active">All Products</li>
 		</ol>
 		</c:if>
+		
+		
 		<c:if test="${userClickCategoryProducts == true}">
+		<script>
+		window.categoryId = '${category.catid}';
+		</script>
 		<ol class="breadcrumb">
 		<li><a href="${contextRoot}/main">Home</a></li>
 		<li class="active">Category</li>
@@ -87,11 +54,104 @@
 		</ol>
 		</c:if>
 		
-		</div></div>
-	
+		</div>
+		<div class="row">
+		<div class="col-xs-12">
+		</div>
+		<table id="productListTable" class="table table-striped table-borderd">
+		<thead>
+		<tr>
+		<th></th>
+		<th><font color="white">Name</font></th>
+		<th><font color="white">Type</font></th>
+		<th><font color="white">Price</font></th>
+		<th><font color="white">Quantity</font></th>
+		<th><font color="white">Purchases</font></th>
+		<th><font color="white">Views</font></th>
+		<th></th>
+		</tr>
+		</thead>
+		<tfoot>
+		<tr>
+		<th></th>
+		<th><font color="white">Name</font></th>
+		<th><font color="white">Type</font></th>
+		<th><font color="white">Price</font></th>
+		<th><font color="white">Quantity</font></th>
+		<th><font color="white">Purchases</font></th>
+		<th><font color="white">Views</font></th>
+		<th></th>
+		</tr>
+		</tfoot>
+		</table>
+		</div>
+		
+		
+		
+		
+		</div>
 	</div>
 	</div></div>
 	</div>
+	
+	<!-- 
+	<div class="container" style="margin-top:50px;">
+	<div class="row">
+
+    	<div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="col-item">
+                <div class="post-img-content">
+                    <img src="http://placehold.it/350x260" class="img-responsive" />
+                    <span class="post-title">
+                        <b>Perfumes</b><br>
+                        <b>Clássico</b>
+                    </span>
+                    <span class="round-tag">-15%</span>
+                </div>
+                <div class="info">
+                    <div class="row">
+                        <div class="price col-md-6">
+                            <h5> Sample Product</h5>
+                            <h5 class="price-text-color">19.99/-</h5>
+                        </div>
+                        <div class="rating hidden-sm col-md-6">
+                            <h5 class="price-text-color">14.99/-</h5>
+                        </div>
+                    </div>
+                    <div class="separator clear-left">
+                        <p class="btn-add">
+                            <i class="fa fa-shopping-cart"></i><a href="#" class="hidden-sm">Add to cart</a></p>
+                        <p class="btn-details">
+                            <i class="fa fa-list"></i><a href="#" class="hidden-sm">More details</a></p>
+                    </div>
+                    <div class="clearfix">
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <div class="col-xs-12 col-sm-6 col-md-3">
+        
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+           
+        </div>
+	</div>
+</div>
+	 -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	<!-- //gallery --><br><br><br><br><br><br><br><br><br><br><br><br>
 	<a href="#gallery" class="scroll" id="toTop" style="display: block;">
 		<span id="toTopHover" style="opacity: 1;"> </span></a>  

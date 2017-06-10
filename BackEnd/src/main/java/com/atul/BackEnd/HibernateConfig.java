@@ -26,7 +26,7 @@ public class HibernateConfig {
 
 	//Bydefault bean is dataSource
 	@Bean
-	private DataSource getDatasource(){
+	public DataSource getDatasource(){
 		BasicDataSource dataSource =new BasicDataSource();
 		//providing database information
 		dataSource.setUsername(DATABASE_USERNAME);
@@ -38,7 +38,7 @@ public class HibernateConfig {
 		}
 	//Bean is sessionFactory
 		@Bean
-		private SessionFactory getsessionFactory(DataSource dataSource){
+		public SessionFactory getsessionFactory(DataSource dataSource){
 			LocalSessionFactoryBuilder builder =new LocalSessionFactoryBuilder(dataSource);
 			builder.addProperties(getHibernatePropeis());
 			builder.scanPackages("com.atul.BackEnd.dto");
@@ -57,7 +57,7 @@ public class HibernateConfig {
 	}
 	// transactionManager bean
 	 @Bean
-	 private HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory){
+	 public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory){
 		 HibernateTransactionManager transactionManager =new HibernateTransactionManager(sessionFactory);
 		 return transactionManager;
 		  }

@@ -32,19 +32,20 @@
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 					<nav class="menu menu--miranda">
 						<ul class="nav navbar-nav menu__list">
-							<li class="menu__item menu__item--current"><a href="${contextRoot}/main" class="menu__link">Home</a></li>
-							<li class="menu__item"><a href="${contextRoot}/about" class=" menu__link">About</a></li>
-							<li class="menu__item"><a href="${contextRoot}/service" class=" menu__link">Services</a></li>
-							<li class="menu__item"><a href="${contextRoot}/show/all/products" class=" menu__link">Dishes</a></li>
-							<li class="menu__item"><a href="${contextRoot}/book" class=" menu__link">Book Table</a></li>
+							<li class="menu__item menu__item--current" id="home"><a href="${contextRoot}/main" class="menu__link">Home</a></li>
+							<li class="menu__item" id="about"><a href="${contextRoot}/about" class=" menu__link">About</a></li>
+							<!-- <li class="menu__item" id="service"><a href="${contextRoot}/service" class=" menu__link">Services</a></li> -->
+							<li class="menu__item" id="allproducts"><a href="${contextRoot}/show/all/products" class=" menu__link">Place Order</a></li>
+							<li class="menu__item" id="book"><a href="${contextRoot}/book" class=" menu__link">Book Table</a></li>
 							<li class="dropdown menu__item">
-						<a href="#" class="dropdown-toggle menu__link"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages<span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle menu__link"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Activities<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="codes.html">Short Codes</a></li>
-							<li><a href="icons.html">Icons</a></li>
+							<li id="service"><a href="${contextRoot}/service" >Services</a></li>
+							<li id="categories"><a href="${contextRoot}/categories">Categories </a></li>
 						</ul>
 					</li>
-							<li class="menu__item"><a href="${contextRoot}/contact" class=" menu__link">Contact</a></li>
+							<li class="menu__item" id="contact"><a href="${contextRoot}/contact" class=" menu__link">Contact</a></li>
+							
 						</ul>
 					</nav>
 				</div>

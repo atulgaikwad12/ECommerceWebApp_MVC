@@ -1,5 +1,12 @@
 package com.atul.BackEnd.dto;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Category {
 	
 	
@@ -33,9 +40,28 @@ public class Category {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
+	
+	
+	
+	@Override
+	public String toString() {
+		return "Category [catid=" + catid + ", catname=" + catname + ", catdesc=" + catdesc + ", imageURL=" + imageURL
+				+ ", active=" + active + "]";
+	}
+
+
+
 	//private fields 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int catid;
-	private String catname,catdesc,imageURL;
+	private String catname;
+	private String catdesc;
+	
+	@Column(name = "image_url")
+	private String imageURL;
+	
+	@Column(name = "is_active")
 	private boolean active = true;
 
 }

@@ -24,14 +24,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } 
+		window.menu = '${title}';
+		window.contextRoot = '${contextRoot}';
 
 </script>
 <!-- //for-mobile-apps -->
 <link href="${css}/bootstrap.css" rel="stylesheet" type="text/css"
 	media="all" />
-<link href="${css}/font-awesome.css" rel="stylesheet">
+	
+	<link href="${css}/font-awesome.css" rel="stylesheet">
 <link href="${css}/style.css" rel="stylesheet" type="text/css"
 	media="all" />
+	<!-- DataTable bootstrap -->
+	<link href="${css}/dataTables.bootstrap.css" rel="stylesheet" />
 <!--web-fonts-->
 <link href="//fonts.googleapis.com/css?family=Montserrat:400,700"
 	rel="stylesheet">
@@ -47,6 +52,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<%@include file="header.jsp"%>
 		<!-- Page content -->
 		<div class="content">
+		<c:if test="${userClickHome == true}"><%@include
+					file="first.jsp"%></c:if>
+					<c:if test="${userClickMain == true}"><%@include
+					file="first.jsp"%></c:if>
 			<c:if test="${userClickAbout == true}"><%@include
 					file="aboutus.jsp"%></c:if>
 			<c:if test="${userClickContact == true}">
@@ -65,8 +74,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<%@include file="book.jsp"%></c:if>
 			<c:if test="${userClickRegst == true}">
 				<%@include file="regst.jsp"%></c:if>
+				<c:if test="${userClickShowProduct == true}"><%@include
+					file="singleProduct.jsp"%></c:if>
 		</div>
 		<%@include file="footer.jsp"%>
 	</div>
+	
+	
+	
+	<!-- Data Table Plugin -->
+	<script type="text/javascript" src="${js}/jquery.dataTables.js"></script>
+	<script type="text/javascript" src="${js}/myapp.js"></script>
+	
+	<script type="text/javascript" src="${js}/dataTables.bootstrap.js"></script>
 </body>
 </html>

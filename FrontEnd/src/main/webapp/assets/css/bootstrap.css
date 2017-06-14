@@ -1079,13 +1079,13 @@ th {
 html {
   font-size: 10px;
 
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: #fa3d03;
 }
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #333;
+  color: #fa3d03;
   background-color: #fff;
 }
 input,
@@ -1214,7 +1214,7 @@ h6 .small,
 .h6 .small {
   font-weight: normal;
   line-height: 1;
-  color: #777;
+  color: #fa3d03;
 }
 h1,
 .h1,
@@ -1334,7 +1334,7 @@ mark,
   text-transform: capitalize;
 }
 .text-muted {
-  color: #777;
+  color: #fa3d03;
 }
 .text-primary {
   color: #337ab7;
@@ -6754,4 +6754,12 @@ button.close {
     display: none !important;
   }
 }
+
+
 /*# sourceMappingURL=bootstrap.css.map */
+
+
+
+.help-block{
+	color:#ff000;
+}

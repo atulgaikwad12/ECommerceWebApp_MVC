@@ -41,6 +41,7 @@ h1,h2,h3,h4,h5,h6{
 	margin:0;
 	font-family: 'Montserrat', sans-serif;
     font-weight: 500;
+    color:#fa3d03 !important;
 }	
 p{
 	margin:0;
@@ -480,7 +481,7 @@ label.icon-search span {
     text-decoration: none;
     color: #faf8f7;
     font-size: 41px;
-    left: 0.2em;
+    left: 0.4em;
 }
 .w3_navigation_pos span {
     color: #fd6239;
@@ -2741,7 +2742,7 @@ h2.typoh2{
 		font-size: 58px;
 	}
 	.w3_navigation_pos {
-		left: 30.6%;
+		left: 36.6%;
 	}
 	.banner-text h2 {
 		font-size: 35px;
@@ -2807,7 +2808,7 @@ h2.typoh2{
 		margin: 1.2em .6em;
 	}
 	.w3_navigation_pos {
-		left: 30.6%;
+		left: 33.6%;
 		top: 1%;
 	}
 	.banner-text h2 {
@@ -2961,10 +2962,10 @@ h2.typoh2{
 		margin: 1.2em .8em;
 	}
 	.w3_navigation_pos h1 a {
-		font-size: 30px;
+		font-size: 26px;
 	}
 	.w3_navigation_pos {
-		left: 27%;
+		left: 29%;
 	}
 	.book-form p {
 		font-size: 19px;
@@ -3005,10 +3006,10 @@ h2.typoh2{
 		font-size: 55px;
 	}
 	.navbar-nav > li:nth-child(3) {
-		margin-right: 6em !important;
+		margin-right: 4em !important;
 	}
 	.menu__list {
-		margin-left: 4px;
+		margin-left: 2px;
 	}
 	.w3_navigation_pos {
 		left: 28.5%;
@@ -3090,7 +3091,7 @@ h2.typoh2{
 		font-size: 22px;
 	}
 	.w3_navigation_pos {
-		left: 34.6%;
+		left: 38.6%;
 		top: 4%;
 	}
 	.form-time-w3layouts,.form-date-w3-agileits,.form-left-agileits-w3layouts,.form-left-agileits-submit{
@@ -3421,7 +3422,7 @@ h2.typoh2{
 		font-size: 48px;
 	}
 	.w3_navigation_pos {
-		left: 34.2%;
+		left: 38.2%;
 		top: 8%;
 	}
 	.form-time-w3layouts, .form-date-w3-agileits, .form-left-agileits-w3layouts, .form-left-agileits-submit {
@@ -4498,5 +4499,6 @@ h2.typoh2{
 	h3.hdg {
 		font-size: 1.5em;
 	}
+	
 }
 /*--responsive--*/

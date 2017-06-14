@@ -16,27 +16,28 @@
 <li class="active">${product.name}</li>
 </ol></div>
 </div><!-- row -->
-
+    <div class="info">
 <div class="row">
 <!-- Product Img -->
 <div class="col-xs-12 col-sm-4">
 <div class="thumbnail">
-<img  src="${images}/${product.pimg_url}" class="img img-responsive"/>
+<img  src="${images}/${product.code}.jpg" class="img img-responsive"/>
 </div>
 </div>
 
 <!-- Product Desc -->
-<div class="col-xs-12 col-sm-4">
-<h3>${product.name}</h3><hr>
-<p>${product.description}</p><hr>
-<h4>Peice:<strong> &#8377; ${product.unitprice} /-</strong></h4><hr>
-<h6>Quntity per Serve: ${product.quantity}</h6><hr>
+<div class="col-xs-12 col-sm-4" style="background-color:black;height:400px">
+<h3><font color="#fa3d03">${product.name}</font></h3><hr>
+<p><font color="white">${product.description}</font></p><hr>
+<h4><font color="white">Price:<strong> &#8377;<font color="#fa3d03"> ${product.unitprice}</font> /-</strong></font></h4><hr>
+<h6><font color="white">Quntity per Serve: <span class="round-tag">${product.quantity}</span></font></h6><hr>
 <a href="${contextRoot}/cart/add/${product.id}/product" class="btn btn-success">
 <span class="glyphicon glyphicon-shopping-cart"></span>Add To Cart</a>
 <a href="${contextRoot}/show/all/products" class="btn btn-primary">Back</a>
 </div>
 
 </div><!-- row -->
+</div><!-- info -->
 </div><!--container  -->
 </body>
 </html>

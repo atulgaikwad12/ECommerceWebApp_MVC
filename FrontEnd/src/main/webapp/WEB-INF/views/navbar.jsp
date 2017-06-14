@@ -2,18 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<!-- //for-mobile-apps -->
-<link href="${css}/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${css}/font-awesome.css" rel="stylesheet"> 
-<link href="${css}/style.css" rel="stylesheet" type="text/css" media="all" />
-<!--web-fonts-->
-<link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-<link href="//fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-<link href="//fonts.googleapis.com/css?family=Tangerine:400,700" rel="stylesheet">
-<!--//web-fonts-->
-</head>
+
 <body>
 <div class="w3_navigation">
 			<nav class="navbar navbar-default">
@@ -32,7 +21,7 @@
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 					<nav class="menu menu--miranda">
 						<ul class="nav navbar-nav menu__list">
-							<li class="menu__item menu__item--current" id="home"><a href="${contextRoot}/main" class="menu__link">Home</a></li>
+							<li class="menu__item" id="home"><a href="${contextRoot}/main" class="menu__link">Home</a></li>
 							<li class="menu__item" id="about"><a href="${contextRoot}/about" class=" menu__link">About</a></li>
 							<!-- <li class="menu__item" id="service"><a href="${contextRoot}/service" class=" menu__link">Services</a></li> -->
 							<li class="menu__item" id="allproducts"><a href="${contextRoot}/show/all/products" class=" menu__link">Place Order</a></li>
@@ -42,6 +31,7 @@
 						<ul class="dropdown-menu">
 							<li id="service"><a href="${contextRoot}/service" >Services</a></li>
 							<li id="categories"><a href="${contextRoot}/categories">Categories </a></li>
+							<li id="manageProducts"><a href="${contextRoot}/manage/products">Manage Products</a></li>
 						</ul>
 					</li>
 							<li class="menu__item" id="contact"><a href="${contextRoot}/contact" class=" menu__link">Contact</a></li>

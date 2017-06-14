@@ -6,9 +6,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <spring:url var="css" value="/resources/css" />
-<spring:url var="fonts" value="/resources/fonts" />
-<spring:url var="js" value="/resources/js" />
-<spring:url var="images" value="/resources/images" />
+
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 
 <html lang="en">
@@ -48,51 +46,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--//web-fonts-->
 </head>
 <body>
-	<div class="wrapper">
-		<!-- Loading header -->
-		<%@include file="header.jsp"%>
-		<!-- Page content -->
-		<div class="content">
-		<c:if test="${userClickHome == true}"><%@include
-					file="first.jsp"%></c:if>
-					<c:if test="${userClickMain == true}"><%@include
-					file="first.jsp"%></c:if>
-			<c:if test="${userClickAbout == true}"><%@include
-					file="aboutus.jsp"%></c:if>
-			<c:if test="${userClickContact == true}">
-				<%@include file="contact.jsp"%></c:if>
-			<c:if test="${userClickService == true}">
-				<%@include file="service.jsp"%></c:if>
-			<c:if test="${userClickManageProduct == true}">
-				<%@include file="manageProducts.jsp"%></c:if>
-				<c:if test="${userClickBlog == true}">
-				<%@include file="blogs.jsp"%></c:if>
-			<c:if
-				test="${userClickAllProducts == true}">
-				<%@include file="gallery.jsp"%></c:if>
-				<c:if
-				test="${userClickCategoryProducts == true}">
-				<%@include file="gallery.jsp"%></c:if>
-			<c:if test="${userClickBook == true}">
-				<%@include file="book.jsp"%></c:if>
-			<c:if test="${userClickRegst == true}">
-				<%@include file="regst.jsp"%></c:if>
-				<c:if test="${userClickShowProduct == true}"><%@include
-					file="singleProduct.jsp"%></c:if>
-		</div>
-		<%@include file="footer.jsp"%>
+<div class="wrapper">
+			<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<a href="${contextRoot}/main" class="navbar-brand"><font color="white">Home</font></a></li>
+				</div></div>
+			</nav>	
+		
+<div class="content">
+<div class="container">
+	<div class="row">
+	<div class="col-xs-12">
+	<div class="jumbotron">
+	<h1><font color="darkorange">${errorTitle}</font></h1>
+	<hr>
+	<blockquote style="word-wrap:break-word">
+	${errorDescription}
+	</blockquote>
 	</div>
-	
-	
-	
-	<!-- Data Table Plugin -->
-	<script type="text/javascript" src="${js}/jquery.dataTables.js"></script>
-	<script type="text/javascript" src="${js}/dataTables.bootstrap.js"></script>
-	<!-- boot box -->
-	<script type="text/javascript" src="${js}/bootbox.min.js"></script>
-	<script type="text/javascript" src="${js}/myapp.js"></script>
-	
-	
-	
+	</div>
+	</div><!-- row -->
+</div></div><!-- content -->
+		
+<%@include file="footer.jsp"%>
+</div><!-- wrapper -->		
+
 </body>
 </html>

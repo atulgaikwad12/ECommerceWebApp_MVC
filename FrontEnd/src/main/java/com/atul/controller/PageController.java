@@ -10,6 +10,7 @@ import com.atul.BackEnd.dao.CategoryDAO;
 import com.atul.BackEnd.dao.ProductDAO;
 import com.atul.BackEnd.dto.Category;
 import com.atul.BackEnd.dto.Product;
+import com.atul.FrontEnd.exception.ProductNotFoundException;
 
 @Controller
 public class PageController 
@@ -117,12 +118,14 @@ public class PageController
    }
    
    @RequestMapping(value= "/show/{id}/product")
-   public ModelAndView shoSingleProduct(@PathVariable("id") int id)
+   public ModelAndView shoSingleProduct(@PathVariable("id") int id)throws ProductNotFoundException
    {
 	 ModelAndView mv=new ModelAndView("page");
 	 //product DAO to fetch single category
 	 Product product =null;
 	 product = productDAO.get(id);
+	 if(product == null)
+		 throw new ProductNotFoundException();
 	 //Updating views of product
 	product.setViews(product.getViews()+1);
 	productDAO.update(product);

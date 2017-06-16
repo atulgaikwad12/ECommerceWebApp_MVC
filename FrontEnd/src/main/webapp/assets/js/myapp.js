@@ -126,7 +126,7 @@ if($table.length){
 //	
 //	setTimeout(function(){
 //			$alert.fadeOut('slow');
-//			}, 3000)
+//			}, 3000);
 //           }
 
 //Data table for admin
@@ -258,10 +258,44 @@ if($adminProductTable.length){
 	});
 }
 //-------------------------------------------------------------
+//validation code for category
+var $categoryForm =$('#categoryForm');
+if($categoryForm.length){
+	
+	$categoryForm.validate({
+		rules :{
+			catname :{
+				required:true,
+				minlength:2
+			},
+			
+			catdesc :{
+				required:true
+			}
+		},
+		messages:{
+			catname :{
+				required: 'Please Enter name for category',
+				minlength:'Category name should not be less than 2 characters'
+			},
+			
+			catdesc :{
+				required:'Please write something about category'
+			}
+			
+			
+		},
+		errorElement:'em',
+		errorPlacement: function(error,element){
+			//add class of help-block
+			error.addClass('help-block');
+			//add error element after input element
+			error.insertAfter(element);
+		}
+	});
+}
 
-
-
-
+//---------------------------------------------------
 
 
 });

@@ -25,24 +25,26 @@ public class ProductTestCase {
 		context.refresh();
 		productDAO =(ProductDAO)context.getBean("productDAO");	
 	}
-	/*@Test
+	/*
+	@Test
 	public void testAddProduct(){
 		
 		Product product = new Product();
-		product.setName("Pizza");
-		product.setBrand("Veg");
-		product.setCatid(3);
-		product.setDescription("Delecious Italic Pan pizza with triple layerd chiese");
-		product.setPimg_url("p1.jpg");
+		product.setName("Chese Omlet ");
+		product.setBrand("Non Veg");
+		product.setCatid(2);
+		product.setDescription("Delecious cheasy");
+		product.setPimg_url("");
 		product.setPurchases(0);
 		product.setSpid(2);
-		product.setUnitprice(85.00);
+		product.setUnitprice(80.00);
 		product.setViews(0);
 		product.setActive(true);
 		product.setQuantity(1);
 		
 		assertEquals("Something went wrong",true,productDAO.add(product));
-	}*/
+	}
+	*/
 	
 	/*
 	@Test

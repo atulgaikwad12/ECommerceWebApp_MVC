@@ -7,8 +7,11 @@
 <div class="banner" id="home">
 		<!-- header -->
 		<div class="banner-top">
-			<div class="container" style="float:left">
-					<a href="${contextRoot}/regst" >Login</a>
+			<div class="well" style="float:right" id="register">
+					<a href="${contextRoot}/register" class="btn btn-primary">Sign up</a>
+			</div>
+			<div class="well" style="float:right" id="login">
+					<a href="${contextRoot}/login" class="btn btn-success">Login</a>
 			</div>
 			<div class="clearfix"></div>
 		</div>

@@ -48,40 +48,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--//web-fonts-->
 </head>
 <body>
-	<div class="wrapper">
-		<!-- Loading header -->
-		<%@include file="header.jsp"%>
-		<!-- Page content -->
-		<div class="content">
-		<c:if test="${userClickHome == true}"><%@include
-					file="first.jsp"%></c:if>
-					<c:if test="${userClickMain == true}"><%@include
-					file="first.jsp"%></c:if>
-			<c:if test="${userClickAbout == true}"><%@include
-					file="aboutus.jsp"%></c:if>
-			<c:if test="${userClickContact == true}">
-				<%@include file="contact.jsp"%></c:if>
-			<c:if test="${userClickService == true}">
-				<%@include file="service.jsp"%></c:if>
-			<c:if test="${userClickManageProduct == true}">
-				<%@include file="manageProducts.jsp"%></c:if>
-				<c:if test="${userClickBlog == true}">
-				<%@include file="blogs.jsp"%></c:if>
-			<c:if
-				test="${userClickAllProducts == true}">
-				<%@include file="gallery.jsp"%></c:if>
-				<c:if
-				test="${userClickCategoryProducts == true}">
-				<%@include file="gallery.jsp"%></c:if>
-			<c:if test="${userClickBook == true}">
-				<%@include file="book.jsp"%></c:if>
-			<c:if test="${userClickRegst == true}">
-				<%@include file="regst.jsp"%></c:if>
-				<c:if test="${userClickShowProduct == true}"><%@include
-					file="singleProduct.jsp"%></c:if>
-		</div>
-		<%@include file="footer.jsp"%>
+>
+	
+	
+	<!-- navigation -->
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+	<div class="navbar-header">
+	<a class="navbar-brand" href="${flowExecutionUrl}&_eventId_home">Home</a>
 	</div>
+	
+	</div>
+	
+	</nav>
+
+		<!-- Page content -->
+<div class="content">
+<div class="container">
+
+<h3><font color="grey">This will be tigger by flow!</font></h3>
+</div>
+</div>
+		<%@include file="../../footer.jsp"%>
+
 	
 	
 	<!-- Jquery Validator -->

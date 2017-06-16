@@ -207,7 +207,7 @@ method="POST" enctype="multipart/form-data">
 				</div>
 				<div class="modal-body">
 				<!--category form  -->
-				<sf:form modelAttribute="category" action="${contextRoot}/manage/category" 
+				<sf:form id="categoryForm" modelAttribute="category" action="${contextRoot}/manage/category" 
 				method="POST" class="form-horizontal" >
 				<div class="form-group">
 				<label for="cat_name" class="control-label col-md-4">Category Name</label>

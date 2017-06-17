@@ -94,7 +94,7 @@ method="POST" enctype="multipart/form-data">
 <div class="col-md-8">
 <sf:textarea path="description" id="description" rows="4"  placeholder="Write something interesting about Product" class="form-control"/>
 <sf:errors path="description" cssClass="help-block" element="em"></sf:errors>
-</div>
+</div></div>
 <div class="form-group">
 <label class="control-label col-md-4" for="catid">Select Product Category:
 </label>

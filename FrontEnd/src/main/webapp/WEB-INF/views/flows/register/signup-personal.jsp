@@ -1,88 +1,96 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-
-<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-<spring:url var="css" value="/resources/css" />
-<spring:url var="fonts" value="/resources/fonts" />
-<spring:url var="js" value="/resources/js" />
-<spring:url var="images" value="/resources/images" />
-<c:set var="contextRoot" value="${pageContext.request.contextPath}" />
-
-<html lang="en">
-<head>
-<title>FoodOrdering - ${title}</title>
-<!-- for-mobile-apps -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords"
-	content="Delish Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
-<script type="application/x-javascript">
-	
-	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-		function hideURLbar(){ window.scrollTo(0,1); } 
-		window.menu = '${title}';
-		window.contextRoot = '${contextRoot}';
-
-</script>
-<!-- DataTable bootstrap -->
-	<link href="${css}/dataTables.bootstrap.css" rel="stylesheet" />
-<!-- //for-mobile-apps -->
-<link href="${css}/bootstrap.css" rel="stylesheet" type="text/css"
-	media="all" />
-	
-	<link href="${css}/font-awesome.css" rel="stylesheet">
-<link href="${css}/style.css" rel="stylesheet" type="text/css"
-	media="all" />
-	
-<!--web-fonts-->
-<link href="//fonts.googleapis.com/css?family=Montserrat:400,700"
-	rel="stylesheet">
-<link href="//fonts.googleapis.com/css?family=Lato:300,400,700"
-	rel="stylesheet">
-<link href="//fonts.googleapis.com/css?family=Tangerine:400,700"
-	rel="stylesheet">
-<!--//web-fonts-->
-</head>
-<body>
->
-	
-	
-	<!-- navigation -->
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-	<div class="container">
-	<div class="navbar-header">
-	<a class="navbar-brand" href="${flowExecutionUrl}&_eventId_home">Home</a>
-	</div>
-	
-	</div>
-	
-	</nav>
-
+<%@taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
+<%@include file="../shared/flows-header.jsp"%>
 		<!-- Page content -->
 <div class="content">
+<br><br><br>
 <div class="container">
 
-<h3><font color="grey">This will be tigger by flow!</font></h3>
+<div class="row">
+<div class="col-md-offset-2 col-md-8" >
+<div class="panel panel-primary" style="margin-top:20px;margin-bottom:20px;margin-left:10px;margin-right:10px;">
+<div class="panel-heading">
+<h4>Sign up -Personal Details</h4>
 </div>
+<div class="panel-body">
+<!-- Form Elements -->
+<sf:form class="form-horizontal" id="registerForm" 
+method="POST" modelAttribute ="user">
+<div class="form-group">
+<label class="control-label col-md-4" for="firstname" >Enter First Name:
+</label>
+<div class="col-md-8">
+<sf:input type="text" path="firstname" id="firstname" placeholder="First Name" class="form-control"/>
+<sf:errors path="firstname" cssClass="help-block" element="em"></sf:errors>
 </div>
-		<%@include file="../../footer.jsp"%>
+</div><!-- form-group -->
+<div class="form-group">
+<label class="control-label col-md-4" for="lastname">Last Name:
+</label>
+<div class="col-md-8">
+<sf:input type="text" path="lastname" id="lastname" placeholder="Last Name" class="form-control"/>
+<sf:errors path="lastname" cssClass="help-block" element="em"></sf:errors>
+</div>
+</div><!-- form-group -->
 
-	
-	
-	<!-- Jquery Validator -->
-	<script type="text/javascript" src="${js}/jquery.validate.js"></script>
-	<!-- Data Table Plugin -->
-	<script type="text/javascript" src="${js}/jquery.dataTables.js"></script>
-	<script type="text/javascript" src="${js}/dataTables.bootstrap.js"></script>
-	<!-- boot box -->
-	<script type="text/javascript" src="${js}/bootbox.min.js"></script>
-	<script type="text/javascript" src="${js}/myapp.js"></script>
-	
-	
-	
-</body>
-</html>
+
+
+<div class="form-group">
+<label class="control-label col-md-4" for="contactnumber">Enter Contact Number:
+</label>
+<div class="col-md-8">
+<sf:input type="number" path="contactnumber" id="contactnumber"  placeholder="91-0000000000" class="form-control"/>
+<sf:errors path="contactnumber" cssClass="help-block" element="em"></sf:errors>
+</div>
+</div><!-- form-group -->
+<div class="form-group">
+<label class="control-label col-md-4" for="email">Enter Email id:
+</label>
+<div class="col-md-8">
+<sf:input type="text" path="email" id="email"  placeholder="abc@yz.com" class="form-control" />
+<sf:errors path="email" cssClass="help-block" element="em"></sf:errors>
+
+</div>
+</div><!-- form-group -->
+<div class="form-group">
+<label class="control-label col-md-4" for="password">Create Password:
+</label>
+<div class="col-md-8">
+<sf:input type="password" path="password" id="password"  placeholder="xxxxxxxxxx" class="form-control"/>
+<sf:errors path="password" cssClass="help-block" element="em"></sf:errors>
+
+</div>
+</div>
+<!--User Selecting role -->
+<div class="form-group">
+<label class="control-label col-md-4" for="role">Select Role:
+</label>
+<div class="col-md-8">
+<label class="radio-inline">
+<sf:radiobutton  path="role" value="USER" checked="checked" />USER
+</label>
+<label class="radio-inline">
+<sf:radiobutton  path="role" value="SUPPLIER" />Supplier
+</label>
+
+ <sf:errors path="role" cssClass="help-block" element="em"/>
+ 
+  </div>
+</div><!-- form-group -->
+
+<div class="form-group">
+<div class="col-md-offset-4 col-md-8">
+<button type="submit" name="_eventId_billing"id="submit" class="btn btn-primary">
+Next - Billing <span class="glyphicon glyphicon-chevron-right"></span>
+</button>
+</div>
+</div><!-- form-group -->
+
+</sf:form>
+</div>
+</div><!-- panel -->
+</div>
+</div><!-- row -->
+
+</div>
+</div>
+<%@include file="../shared/flows-footer.jsp"%>	

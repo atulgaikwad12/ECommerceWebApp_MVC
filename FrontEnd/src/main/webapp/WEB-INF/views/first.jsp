@@ -23,12 +23,7 @@
 									<img src="${images}/p2.jpg" alt=" " class="img-responsive" />
 						</div>
 					</li>
-					<li>
-						<div class="wthree_testimonials_grid_main">
-						
-									<img src="${images}/p3.jpg" alt=" " class="img-responsive" />
-						</div>
-					</li>
+					
 					<li>
 						<div class="wthree_testimonials_grid_main">
 						

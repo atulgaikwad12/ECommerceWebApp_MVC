@@ -34,10 +34,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="${css}/bootstrap.css" rel="stylesheet" type="text/css"
 	media="all" />
 	
-	<link href="${css}/font-awesome.css" rel="stylesheet">
+	<link href="${css}/font-awesome.css" rel="stylesheet" type="text/css">
 <link href="${css}/style.css" rel="stylesheet" type="text/css"
 	media="all" />
-	
+	<link href="${css}/bootstrap-social.css" rel="stylesheet" type="text/css">
 <!--web-fonts-->
 <link href="//fonts.googleapis.com/css?family=Montserrat:400,700"
 	rel="stylesheet">
@@ -50,6 +50,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 	<div class="wrapper">
 		<!-- Loading header -->
+
 		<%@include file="header.jsp"%>
 		<!-- Page content -->
 		<div class="content">
@@ -81,6 +82,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					file="singleProduct.jsp"%></c:if>
 		</div>
 		<%@include file="footer.jsp"%>
+		</div>
+		
 	</div>
 	
 	

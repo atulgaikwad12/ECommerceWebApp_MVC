@@ -20,7 +20,10 @@
 <meta name="keywords"
 	content="Delish Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+<meta name="_csrf" content="${_csrf.token}" >
+<meta name="_csrf_header" content="${_csrf.headerName}" >
 <script type="application/x-javascript">
+
 	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } 
@@ -76,15 +79,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<%@include file="gallery.jsp"%></c:if>
 			<c:if test="${userClickBook == true}">
 				<%@include file="book.jsp"%></c:if>
-			<c:if test="${userClickRegst == true}">
-				<%@include file="regst.jsp"%></c:if>
+			
 				<c:if test="${userClickShowProduct == true}"><%@include
 					file="singleProduct.jsp"%></c:if>
 		</div>
 		<%@include file="footer.jsp"%>
 		</div>
 		
-	</div>
+	
 	
 	
 	<!-- Jquery Validator -->

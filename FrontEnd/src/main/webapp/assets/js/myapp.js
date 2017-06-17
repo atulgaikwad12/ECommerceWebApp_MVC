@@ -31,6 +31,17 @@ $(function()
 	
 	}
 		
+//To tackel csrf token
+	var token = $('meta[name="_csrf"]').attr('content');
+	var header = $('meta[name="_csrf_header"]').attr('content');
+	
+	if(token.length > 0 && header.length > 0){
+		//set tokrn request for ajax
+		$(document).ajaxSend(function(e, xhr, options){
+			xhr.setRequestHeader(header,token);
+		});
+		
+	}
 	
 //code for jquery datable
 //create data table
@@ -126,7 +137,7 @@ if($table.length){
 //	
 //	setTimeout(function(){
 //			$alert.fadeOut('slow');
-//			}, 3000);
+//			}, 3000)
 //           }
 
 //Data table for admin
@@ -296,6 +307,45 @@ if($categoryForm.length){
 }
 
 //---------------------------------------------------
+//validation code for Login form
+var $loginForm =$('#loginForm');
+if($loginForm.length){
+	
+	$loginForm.validate({
+		rules :{
+			email :{
+				required:true,
+				email:true
+			},
+			password :{
+				required:true,
+			}
+			
+		},
+			
+		messages:{
+			email :{
+				required: 'Please enter your user name',
+				email:'enter valid email id'
+			},
+			
+			password :{
+				required:'Please enter your password'
+			}
+			
+			
+		},
+		errorElement:'em',
+		errorPlacement: function(error,element){
+			//add class of help-block
+			error.addClass('help-block');
+			//add error element after input element
+			error.insertAfter(element);
+		}
+		
+	});
+}
+//-------------------------------------------------
 
 
 });

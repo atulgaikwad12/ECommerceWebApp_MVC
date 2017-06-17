@@ -1,9 +1,10 @@
-package com.atul.controller;
+package com.atul.FrontEnd.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.atul.BackEnd.dao.CategoryDAO;
@@ -108,14 +109,7 @@ public class PageController
 	 mv.addObject("userClickBook",true);
 	 return mv;
    }
-   @RequestMapping(value= "/regst")
-   public ModelAndView regst()
-   {
-	 ModelAndView mv=new ModelAndView("page");
-	 mv.addObject("title","Sign up form");
-	 mv.addObject("userClickRegst",true);
-	 return mv;
-   }
+  
    
    @RequestMapping(value= "/show/{id}/product")
    public ModelAndView shoSingleProduct(@PathVariable("id") int id)throws ProductNotFoundException
@@ -136,4 +130,25 @@ public class PageController
 	 return mv;
    }
 
+   @RequestMapping(value= "/login")
+   public ModelAndView login(@RequestParam(name="error", required = false)String error)
+   {
+	 ModelAndView mv=new ModelAndView("login");
+	 if(error!=null){
+		 mv.addObject("message","Invalid username and password");
+	 }
+	 mv.addObject("title","Login page");
+	 return mv;
+   }
+   
+   @RequestMapping(value= "/access-denied")
+   public ModelAndView accessDenied()
+   {
+	 ModelAndView mv=new ModelAndView("error");
+	 mv.addObject("title","403 -Access Denied");
+	 mv.addObject("errorTitle","Aha! Caught you");
+	 mv.addObject("errorDescription","You are not authorized to view this page!");
+	 return mv;
+   }
+   
 }

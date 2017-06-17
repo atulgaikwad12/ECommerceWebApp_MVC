@@ -25,7 +25,7 @@ public class HibernateConfig {
 	private static final String DATABASE_PASSWORD ="sa";
 
 	//Bydefault bean is dataSource
-	@Bean
+	@Bean("dataSource")
 	public DataSource getDatasource(){
 		BasicDataSource dataSource =new BasicDataSource();
 		//providing database information

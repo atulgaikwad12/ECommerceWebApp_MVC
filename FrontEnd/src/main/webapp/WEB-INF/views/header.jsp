@@ -9,9 +9,9 @@ glyphicon "> Login</span></a>
 			</div>
 			
 			<div class="clearfix">
-			<a class="btn btn-social-icon btn-twitter">
+			<a class="btn btn-social-icon btn-twitter" href="https://twitter.com/atulanilgaikwad">
     			<span class="fa fa-twitter"></span> </a>
-    			<a class="btn btn-social-icon btn-facebook">
+    			<a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/vwapofficial6/">
     			<span class="fa fa-facebook"></span> </a>
 				<span class="glyphicon glyphicon-cutlery"></span>
 				<span class="glyphicon glyphicon-earphone">9702313731</span>

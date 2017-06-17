@@ -60,6 +60,15 @@ method="POST" modelAttribute ="user">
 
 </div>
 </div>
+<div class="form-group">
+<label class="control-label col-md-4" for="confirmPassword">Confirm Password:
+</label>
+<div class="col-md-8">
+<sf:input type="password" path="confirmPassword" id="confirmPassword"  placeholder="Retype password" class="form-control"/>
+<sf:errors path="confirmPassword" cssClass="help-block" element="em"></sf:errors>
+
+</div>
+</div>
 <!--User Selecting role -->
 <div class="form-group">
 <label class="control-label col-md-4" for="role">Select Role:

@@ -28,6 +28,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		window.contextRoot = '${contextRoot}';
 
 </script>
+<style type="text/css">
+.help-block{
+color :red;
+}
+</style>
 <!-- DataTable bootstrap -->
 	<link href="${css}/dataTables.bootstrap.css" rel="stylesheet" />
 <!-- //for-mobile-apps -->

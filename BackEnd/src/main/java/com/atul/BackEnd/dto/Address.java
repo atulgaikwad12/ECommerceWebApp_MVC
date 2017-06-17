@@ -8,6 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Min;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 public class Address implements Serializable{
@@ -34,15 +37,22 @@ public class Address implements Serializable{
 		this.user = user;
 	}
 	@Column(name = "address_line_one")
+	@NotBlank(message = "Please enter address line one!")
 	private String addressLineOne;
 	@Column(name = "address_line_two")
+	@NotBlank(message = "Please enter address line two!")
 	private String addressLineTwo;
 	@Column(name = "postal_code")
+	@NotBlank(message = "Please postal code!")
+	@Min(value=999,message = "Postal code cannot be of less than 4 Digits!")
 	private String postalCode;
 	private boolean shipping;
 	private boolean billing;
+	@NotBlank(message = "Please enter country!")
 	private String country;
+	@NotBlank(message = "Please enter city!")
 	private String city;
+	@NotBlank(message = "Please enter state!")
 	private String state;
 	public int getId() {
 		return id;

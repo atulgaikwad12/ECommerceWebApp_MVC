@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -25,17 +26,45 @@
 							<li class="menu__item" id="about"><a href="${contextRoot}/about" class=" menu__link">About</a></li>
 							<!-- <li class="menu__item" id="service"><a href="${contextRoot}/service" class=" menu__link">Services</a></li> -->
 							<li class="menu__item" id="allproducts"><a href="${contextRoot}/show/all/products" class=" menu__link">Place Order</a></li>
-							<li class="menu__item" id="book"><a href="${contextRoot}/book" class=" menu__link">Book Table</a></li>
+							<!-- <li class="menu__item" id="book"><a href="${contextRoot}/book" class=" menu__link">Book Table</a></li>-->
 							<li class="dropdown menu__item">
 						<a href="#" class="dropdown-toggle menu__link"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Activities<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li id="service"><a href="${contextRoot}/service" >Services</a></li>
 							<li id="categories"><a href="${contextRoot}/categories">Categories </a></li>
-							<li id="manageProducts"><a href="${contextRoot}/manage/products">Manage Products</a></li>
+							<security:authorize access="hasAuthority('ADMIN')">	
+								<li id="manageProducts"><a href="${contextRoot}/manage/products">Manage Products</a></li>
+							</security:authorize>
 						</ul>
 					</li>
 							<li class="menu__item" id="contact"><a href="${contextRoot}/contact" class=" menu__link">Contact</a></li>
-							
+						  <security:authorize access="isAuthenticated()">	
+							<li class="dropdown menu__item" >
+			<!--  <a href="javascript:void(0)"
+			class="btn btn-default dropdown-toggle"
+			id="dropdownMenu1"
+			data-toggle="drpdown">
+		
+			<span class="caret"></span></a>-->
+			<a href="#" class="dropdown-toggle menu__link"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${userModel.fullname}<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			 <security:authorize access="hasAuthority('USER')">	
+				<li>
+				<a href="${contextRoot}/cart">
+				<span class="glyphicon glyphicon-shopping-cart"></span>
+				<span class="badge">${userModel.cart.cartLines}</span>
+				- &#8377;  ${userModel.cart.grandTotal}
+				</a>
+				</li>
+			</security:authorize>
+			<li class="divider" role="separator"></li>
+			<li>
+			<a href="${contextRoot}/perform-logout"> Logout </a>
+			</li>
+			</ul>
+			</li>
+			</security:authorize>
+	
 						</ul>
 					</nav>
 				</div>
@@ -78,6 +107,9 @@
 		});
 	</script>
 	<script type="text/javascript" src="${js}/jquery.flexisel.js"></script>
+	<script>
+	window.userRole = '${userModel.role}';
+	</script>
 	<!--gallery-->
 	<!-- Dropdown-Menu-JavaScript -->
 	<script>
@@ -92,59 +124,7 @@
 		});
 	</script>
 	<!-- //Dropdown-Menu-JavaScript -->
-	<!-- Calendar -->
-	<link rel="stylesheet" href="${css}/jquery-ui.css" />
-	<script src="${js}/jquery-ui.js"></script>
-	<script>
-		$(function() {
-			$("#datepicker,#datepicker1,#datepicker2,#datepicker3")
-					.datepicker();
-		});
-	</script>
-	<!-- //Calendar -->
-	<!-- start-smoth-scrolling -->
-	<script type="text/javascript" src="${js}/move-top.js"></script>
-	<script type="text/javascript" src="${js}/easing.js"></script>
-	<script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$(".scroll").click(function(event) {
-				event.preventDefault();
-				$('html,body').animate({
-					scrollTop : $(this.hash).offset().top
-				}, 1000);
-			});
-		});
-	</script>
-	<!-- start-smoth-scrolling -->
-	<!-- here stars scrolling icon -->
-	<script type="text/javascript">
-		$(document).ready(function() {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-				};
-			 */
+	
 
-			$().UItoTop({
-				easingType : 'easeOutQuart'
-			});
-
-		});
-	</script>
-	<!-- //here ends scrolling icon -->
-	<!--js for bootstrap working-->
-	<script src="${js}/bootstrap.js"></script>
-	<!-- //for bootstrap working -->
-	<!-- script-for-menu -->
-	<script>
-		$("span.menu").click(function() {
-			$(".top-nav ul").slideToggle("slow", function() {
-			});
-		});
-	</script>
-	<!-- script-for-menu -->
 </body>
 </html>

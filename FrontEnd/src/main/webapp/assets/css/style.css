@@ -4501,4 +4501,8 @@ h2.typoh2{
 	}
 	
 }
+
+.table-responsive{
+	overflow-x : inherit;
+}
 /*--responsive--*/

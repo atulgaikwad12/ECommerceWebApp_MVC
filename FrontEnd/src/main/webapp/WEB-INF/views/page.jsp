@@ -17,9 +17,9 @@
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords"
-	content="Delish Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+<meta name="author"
+	content="Atul Gaikwad" />
+	
 <meta name="_csrf" content="${_csrf.token}" >
 <meta name="_csrf_header" content="${_csrf.headerName}" >
 <script type="application/x-javascript">
@@ -49,6 +49,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="//fonts.googleapis.com/css?family=Tangerine:400,700"
 	rel="stylesheet">
 <!--//web-fonts-->
+
+<style type="text/css">
+.table-responsive{
+	overflow-x : inherit;
+}
+
+</style>
 </head>
 <body>
 	<div class="wrapper">

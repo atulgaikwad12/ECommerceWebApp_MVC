@@ -163,7 +163,8 @@ method="POST" enctype="multipart/form-data">
 <hr/>
 </div>
 <div class="col-xs-12">
-<div style="overflow:auto">
+<div class="container-fluid">
+<div class="table-responsive">
 <table id="adminProductsTable" class="table table-striped table-borderd">
 		<thead>
 		<tr>
@@ -191,7 +192,7 @@ method="POST" enctype="multipart/form-data">
 		</tr>
 		</tfoot>
 		</table>
-
+</div>
 </div>
 </div>
 </div>

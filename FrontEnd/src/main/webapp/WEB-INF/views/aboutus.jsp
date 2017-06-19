@@ -1,9 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
 
-<body>
 <div class="about" id="about">
       <div class="col-md-6 ab-w3-agile-info">
 	   <div class="ab-w3-agile-info-text">
@@ -38,5 +33,3 @@
 			<p><a class="read" href="single.html">Read More</a></p>
 	</div>
 </div>
-</body>
-</html>

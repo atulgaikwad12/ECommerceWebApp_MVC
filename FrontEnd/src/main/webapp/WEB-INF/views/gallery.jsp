@@ -1,9 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
 
-<body>
 <br><br><br><br>
 	<!-- List Products -->
 	<div class="container">
@@ -147,58 +142,3 @@
 	
 	
 	
-	<!-- //gallery --><br><br><br><br><br><br><br><br><br><br><br><br>
-	<a href="#gallery" class="scroll" id="toTop" style="display: block;">
-		<span id="toTopHover" style="opacity: 1;"> </span></a>  
-	<script type="text/javascript" src="${js}/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="${js}/numscroller-1.0.js"></script>
-	<script src="${js}/particles.js"></script>
-	<script src="${js}/app.js"></script>
-	<!--gallery-->
-	<script type="text/javascript">
-		$(window).load(function() {
-			$("#flexiselDemo1").flexisel({
-				visibleItems : 4,
-				animationSpeed : 1000,
-				autoPlay : true,
-				autoPlaySpeed : 3000,
-				pauseOnHover : true,
-				enableResponsiveBreakpoints : true,
-				responsiveBreakpoints : {
-					portrait : {
-						changePoint : 480,
-						visibleItems : 1
-					},
-					landscape : {
-						changePoint : 640,
-						visibleItems : 2
-					},
-					tablet : {
-						changePoint : 768,
-						visibleItems : 3
-					}
-				}
-			});
-
-		});
-	</script>
-	<script type="text/javascript" src="${js}/jquery.flexisel.js"></script>
-	<!--gallery-->
-	<!-- Dropdown-Menu-JavaScript -->
-	<script>
-		$(document).ready(function() {
-			$(".dropdown").hover(function() {
-				$('.dropdown-menu', this).stop(true, true).slideDown("fast");
-				$(this).toggleClass('open');
-			}, function() {
-				$('.dropdown-menu', this).stop(true, true).slideUp("fast");
-				$(this).toggleClass('open');
-			});
-		});
-	</script>
-	<!-- //Dropdown-Menu-JavaScript -->
-	
-	
-
-</body>
-</html>

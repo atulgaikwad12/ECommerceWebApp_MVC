@@ -4506,3 +4506,116 @@ h2.typoh2{
 	overflow-x : inherit;
 }
 /*--responsive--*/
+
+
+/*custom css*/
+.help-block {
+	color: red;
+}
+
+.adminDataTableImg {
+	width: 50px;
+	height: 50px;
+}
+
+.switch {
+	width: 50px;
+	height: 30px;
+	position: relative;
+	display: inline-block;
+}
+
+.switch input {
+	display: none;
+}
+
+.slider {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	cursor: pointer;
+	background-color: #ccc;
+	border-radius: 30px;
+	transition: .5s;
+}
+
+.slider:before {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	content: "";
+	bottom: 5px;
+	left: 5px;
+	background-color: #fff;
+	border-radius: 50%;
+	transition: .5s;
+}
+
+input:checked+.slider {
+	background-color: #1863E6;
+}
+
+input:checked+.slider:before {
+	transform: translateX(20px);
+}
+.help-block {
+	color: red;
+}
+
+.adminDataTableImg {
+	width: 50px;
+	height: 50px;
+}
+
+.switch {
+	width: 50px;
+	height: 30px;
+	position: relative;
+	display: inline-block;
+}
+
+.switch input {
+	display: none;
+}
+
+.slider {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	cursor: pointer;
+	background-color: #ccc;
+	border-radius: 30px;
+	transition: .5s;
+}
+
+.slider:before {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	content: "";
+	bottom: 5px;
+	left: 5px;
+	background-color: #fff;
+	border-radius: 50%;
+	transition: .5s;
+}
+
+input:checked+.slider {
+	background-color: #1863E6;
+}
+
+input:checked+.slider:before {
+	transform: translateX(20px);
+}
+
+
+
+
+
+
+
+

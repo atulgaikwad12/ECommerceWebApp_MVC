@@ -146,14 +146,14 @@ if($table.length){
 
 //dismissing alert after 3 seconds
 
-//var $alert = ${'.alert'};
-//
-//if($alert.length){
-//	
-//	setTimeout(function(){
-//			$alert.fadeOut('slow');
-//			}, 3000)
-//           }
+var $alert = $('.alert');
+
+if($alert.length){
+	
+	setTimeout(function(){
+			$alert.fadeOut('slow');
+			}, 3000)
+           }
 
 //Data table for admin
 var $adminProductTable = $('#adminProductsTable');

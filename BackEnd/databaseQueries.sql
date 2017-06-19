@@ -39,3 +39,46 @@ CREATE TABLE category (
 	CONSTRAINT pk_category_id PRIMARY KEY (id) 
 
 );
+
+
+CREATE TABLE cart_line (
+	
+	    id IDENTITY,
+        cartid number(100),	
+        buying_price number(100),
+        prod_id number(100),
+        total number(60),
+        quantity number(50),
+	    is_available BOOLEAN,
+	
+	CONSTRAINT pk_cart_line_id PRIMARY KEY (id) ,
+    FOREIGN KEY (cartid) REFERENCES cart(id)
+);
+
+CREATE TABLE order_item (
+	
+		id IDENTITY,
+	     order_id number(100),	
+	     buying_price number(100),
+	     prod_id number(100),
+	     total number(60),
+	     sub_total number(60),
+	     quantity number(50),
+	
+	
+	CONSTRAINT pk_order_item_id PRIMARY KEY (id) ,
+    FOREIGN KEY (order_id) REFERENCES cart(id)
+);
+
+
+
+CREATE TABLE orders (
+	 id IDENTITY,
+         user_id number(100),	
+         shipping_id number(100),
+         order_total number(100),
+         order_items number(100),   
+	CONSTRAINT pk_orders_id PRIMARY KEY (id) ,
+        FOREIGN KEY (user_id) REFERENCES user_detail(id),
+        FOREIGN KEY (shipping_id) REFERENCES address(id)
+);

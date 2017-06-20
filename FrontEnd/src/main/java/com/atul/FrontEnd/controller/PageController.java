@@ -3,21 +3,30 @@ package com.atul.FrontEnd.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.atul.BackEnd.dao.CartlineDAO;
 import com.atul.BackEnd.dao.CategoryDAO;
 import com.atul.BackEnd.dao.ProductDAO;
+import com.atul.BackEnd.dao.UserDAO;
+import com.atul.BackEnd.daoimpl.CartLineDAOImpl;
+import com.atul.BackEnd.dto.Cart;
+import com.atul.BackEnd.dto.CartLine;
 import com.atul.BackEnd.dto.Category;
 import com.atul.BackEnd.dto.Product;
+import com.atul.BackEnd.dto.User;
 import com.atul.FrontEnd.exception.ProductNotFoundException;
+import com.atul.FrontEnd.model.UserModel;
 
 @Controller
 public class PageController 
@@ -32,6 +41,16 @@ public class PageController
    
    @Autowired
    private ProductDAO productDAO;
+   
+   @Autowired
+   private UserDAO userDAO;
+   
+   @Autowired
+   private CartlineDAO cartlineDAO;
+   
+//   @Autowired
+//   private GlobalController globalcontroller;
+//   
    @RequestMapping(value= {"/","/home","/index"})
    public ModelAndView index()
    {
@@ -49,13 +68,18 @@ public class PageController
 	 return mv;
    }
    @RequestMapping(value= "/show/all/products")
-   public ModelAndView showAllProducts()
+   public ModelAndView showAllProducts(@RequestParam(name="operation",required=false) String operation)
    {
 	 ModelAndView mv=new ModelAndView("page");
 	 mv.addObject("title","Menu Items");
 	//passing list of category
      mv.addObject("categories",categoryDAO.list());
 	 mv.addObject("userClickAllProducts",true);
+	 if(operation!=null){
+		 if(operation.equals("cart")){
+			 mv.addObject("message","Product added to cart sucessfully!!");
+		 }
+	 }
 	 return mv;
    }
    @RequestMapping(value= "/show/category/{id}/products")
@@ -175,5 +199,55 @@ public class PageController
 	   
 	 return "redirect:/login?logout";
    }
+   
+   @RequestMapping(value= "/cart/add/{id}/product/for/{userid}")
+   public String addProductToCart(@PathVariable("id") int id,@PathVariable("userid") int userid)throws ProductNotFoundException
+   {
+	 
+	 //product DAO to fetch single category
+	 Product product =null;
+	 Cart cart = null;
+	 int cartId;
+	 product = productDAO.get(id);
+	 User user = userDAO.getById(userid);	 
+	 cartId = user.getCart().getId();
+	 if(product == null)
+		 throw new ProductNotFoundException();
+     CartLine cartline = cartlineDAO.ifExists(cartId,product.getId());	
+     //If product is new to cart
+	 if(cartline == null){
+		 CartLine ncartline = new CartLine();
+		 ncartline.setCartId(cartId);
+		 ncartline.setProdId(product.getId());
+		 ncartline.setBuyingPrice(product.getUnitprice());
+		 ncartline.setAvailable(product.isActive());
+		 ncartline.setQuantity(product.getQuantity());
+		 ncartline.setTotal(ncartline.getQuantity() * ncartline.getBuyingPrice());
+		 cartlineDAO.add(ncartline);	
+		 //updating cart
+		 cart = user.getCart();
+		 cart.setGrandTotal(cart.getGrandTotal()+ncartline.getTotal());
+		 cart.setCartLines(cart.getCartLines()+1);
+		 userDAO.updateCart(cart);
+	 }
+	 //If same product already in cart
+	 if(cartline != null){
+		
+		 cartline.setBuyingPrice(product.getUnitprice());
+		 cartline.setAvailable(product.isActive());
+		 cartline.setQuantity(product.getQuantity() + product.getQuantity());
+		 cartline.setTotal(cartline.getQuantity() * cartline.getBuyingPrice());
+		 cartlineDAO.update(cartline);	
+		 //updating cart
+		 cart = user.getCart();
+		 cart.setGrandTotal(cart.getGrandTotal()+cartline.getTotal());
+		 cart.setCartLines(cart.getCartLines()+1);
+		 userDAO.updateCart(cart);
+	 }
+	 
+	//-------------------------
+	 return "redirect:/show/all/products?operation=cart";
+   }
+
    
 }

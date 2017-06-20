@@ -10,6 +10,7 @@ public interface UserDAO {
 	
 	List<User> list();
 	User getByEmail(String email);
+	User getById(int userId);
 	boolean addUser(User user);
 	
 	boolean addAddres(Address address);

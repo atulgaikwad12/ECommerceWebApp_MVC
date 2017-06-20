@@ -316,6 +316,8 @@ input:checked+.slider:before {
 <script type="text/javascript" src="${js}/jquery.flexisel.js"></script>
 	<script>
 	window.userRole = '${userModel.role}';
+	window.userEmail = '${userModel.email}';
+	window.userId = '${userModel.id}';
 	</script>
 
 </body>

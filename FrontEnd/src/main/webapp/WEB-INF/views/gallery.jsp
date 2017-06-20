@@ -3,6 +3,14 @@
 	<!-- List Products -->
 	<div class="container">
 	<div class="row">
+	<c:if test="${not empty message}">
+				<div class="col-xs-12">
+					<div class="alert alert-success alert-dismissible">
+						<button type="button" class="close" data-dismiss="alert">&times;</button>
+						${message}
+					</div>
+				</div>
+			</c:if>
 	<div class="col-md-3">
 	<!-- Side Category bar -->
 	<h3 class="tittle-w3 sub-head">Our Categories</h3>

@@ -132,7 +132,7 @@ if($table.length){
 		        			 str += '<a href="javascript:void(0)" class="btn btn-success disabled"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
 		        		 }
 	        			 else{
-	        				 str += '<a href="'+window.contextRoot+'/cart/add/'+data+'/product" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
+	        				 str += '<a href="'+window.contextRoot+'/cart/add/'+data+'/product/for/'+userId+'" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
 	        		 
 	        			 }
 	        		 }

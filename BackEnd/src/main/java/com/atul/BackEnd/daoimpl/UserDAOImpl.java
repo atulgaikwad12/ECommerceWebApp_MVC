@@ -107,4 +107,18 @@ public class UserDAOImpl implements UserDAO {
 		}
 	}
 
+	@Override
+	public User getById(int userId) {
+		String selectQuery = "FROM User WHERE id = :userId";
+
+		try {
+			return sessionFactory.getCurrentSession().createQuery(selectQuery, User.class).setParameter("userId",userId)
+					.getSingleResult();
+		} catch (Exception ex) {
+			 ex.printStackTrace();
+			return null;
+		}
+
+	}
+
 }

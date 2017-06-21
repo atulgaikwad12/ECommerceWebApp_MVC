@@ -2,13 +2,13 @@ package com.atul.FrontEnd.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,7 +18,6 @@ import com.atul.BackEnd.dao.CartlineDAO;
 import com.atul.BackEnd.dao.CategoryDAO;
 import com.atul.BackEnd.dao.ProductDAO;
 import com.atul.BackEnd.dao.UserDAO;
-import com.atul.BackEnd.daoimpl.CartLineDAOImpl;
 import com.atul.BackEnd.dto.Cart;
 import com.atul.BackEnd.dto.CartLine;
 import com.atul.BackEnd.dto.Category;
@@ -45,6 +44,9 @@ public class PageController {
 
 	@Autowired
 	private CartlineDAO cartlineDAO;
+	
+	@Autowired
+	private HttpSession session;
 
 	// @Autowired
 	// private GlobalController globalcontroller;
@@ -236,7 +238,7 @@ public class PageController {
 			ncartline.setTotal(ncartline.getQuantity() * ncartline.getBuyingPrice());
 			cartlineDAO.add(ncartline);
 			// updating cart
-			cart = user.getCart();
+			cart = getCart();
 			cart.setGrandTotal(cart.getGrandTotal() + ncartline.getTotal());
 			cart.setCartLines(cart.getCartLines() + 1);
 			userDAO.updateCart(cart);
@@ -250,7 +252,7 @@ public class PageController {
 			cartline.setTotal(cartline.getQuantity() * cartline.getBuyingPrice());
 			cartlineDAO.update(cartline);
 			// updating cart
-			cart = user.getCart();
+			cart = getCart();
 			cart.setGrandTotal(cart.getGrandTotal() + cartline.getTotal());
 			cart.setCartLines(cart.getCartLines() + 1);
 			userDAO.updateCart(cart);
@@ -264,7 +266,7 @@ public class PageController {
 	public ModelAndView showCart(@RequestParam(name = "operation", required = false) String operation,@PathVariable("id") int id) {
 		ModelAndView mv = new ModelAndView("page");
 		User user = userDAO.getById(id);
-		int cartId = user.getCart().getId();
+		int cartId = getCart().getId();
 
 		mv.addObject("title", "Cart Of" + user.getFirstname() + "");
 		// passing list of cart items
@@ -283,14 +285,22 @@ public class PageController {
 		CartLine cartline = cartlineDAO.getById(id);
 		// Updating cart
 		Cart cart = null;
-		cart = userDAO.getCartById(cartline.getCartId());
+		//cart = userDAO.getCartById(cartline.getCartId());
+		cart = getCart();
+		
 		int userid = cart.getUser().getId();
 		cart.setGrandTotal(cart.getGrandTotal() - cartline.getTotal());
 		cart.setCartLines(cart.getCartLines() - 1);
 		userDAO.updateCart(cart);
-
 		// Deleting cart item
 		cartlineDAO.delete(cartline);
 		return "redirect:/cart/" + userid + "/show?operation=remove";
+	}
+	
+	
+	private Cart getCart(){
+		
+		return ((UserModel)session.getAttribute("userModel")).getCart();
+		
 	}
 }

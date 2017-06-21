@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import com.atul.BackEnd.dto.Cart;
 
-public class UserModel implements Serializable {
+public class UserModel implements Serializable{
 
 	/**
 	 * 

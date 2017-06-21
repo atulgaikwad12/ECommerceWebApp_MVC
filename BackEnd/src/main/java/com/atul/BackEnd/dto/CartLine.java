@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -34,6 +35,15 @@ public class CartLine implements Serializable {
 	private int quantity;
 	@Column(name = "is_available")
 	private boolean available=true;
+	@OneToOne
+	private Product product;
+	
+	public Product getProduct() {
+		return product;
+	}
+	public void setProduct(Product product) {
+		this.product = product;
+	}
 	public int getId() {
 		return id;
 	}

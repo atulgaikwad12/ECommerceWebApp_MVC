@@ -1,12 +1,12 @@
     <%@taglib prefix="security" uri="http://www.springframework.org/security/tags"  %>
-<div class="banner" id="home">
+    <div class="banner" id="home">
 		<!-- header -->
 		<div class="banner-top">
 		    <security:authorize access="isAnonymous()">
 			<div class="btn-group btn-group-sm" style="float:right" role="group" aria-label="">
 			<!-- <a href="${contextRoot}/" ><span class="glyphicon glyphicon-shopping-cart"></span></a>-->
 			<a href="${contextRoot}/login" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-user
-glyphicon "> Login</span></a>
+    glyphicon "> Login</span></a>
 			<a href="${contextRoot}/register" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-globe"> Sign up</span></a>
 			</div>
 			</security:authorize>

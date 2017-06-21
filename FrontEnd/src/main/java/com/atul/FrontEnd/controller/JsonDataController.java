@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.atul.BackEnd.dao.CartlineDAO;
 import com.atul.BackEnd.dao.ProductDAO;
+import com.atul.BackEnd.dto.CartLine;
 import com.atul.BackEnd.dto.Product;
 
 
@@ -19,6 +21,9 @@ public class JsonDataController {
 	
 	@Autowired
 	private ProductDAO productDAO;
+	
+	@Autowired
+	private CartlineDAO cartlineDAO;
 	
 	@RequestMapping("/json/data/all/products")
 	@ResponseBody
@@ -41,6 +46,14 @@ public class JsonDataController {
 		return productDAO.listActiveProductsByCategory(id);
 	}
 
+	@RequestMapping("/json/data/cart/{id}/items")
+	@ResponseBody
+	public List<CartLine> getCartItem(@PathVariable int id){
+		
+		//List<CartItems> caritems =new <CartItems>; 
+		
+		return cartlineDAO.list(id);
+	}
 	
 	
 

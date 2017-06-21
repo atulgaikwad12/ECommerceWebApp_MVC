@@ -29,6 +29,7 @@
 		function hideURLbar(){ window.scrollTo(0,1); } 
 		window.menu = '${title}';
 		window.contextRoot = '${contextRoot}';
+		window.cartId = '${userModel.cart.id}';
 
 
 </script>
@@ -175,6 +176,8 @@ input:checked+.slider:before {
 					file="first.jsp"%></c:if>
 			<c:if test="${userClickMain == true}"><%@include
 					file="first.jsp"%></c:if>
+					<c:if test="${userClickShowCart == true}"><%@include
+					file="listCartItems.jsp"%></c:if>
 			<c:if test="${userClickAbout == true}"><%@include
 					file="aboutus.jsp"%></c:if>
 			<c:if test="${userClickContact == true}">

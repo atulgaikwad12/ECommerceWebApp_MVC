@@ -361,7 +361,77 @@ if($loginForm.length){
 	});
 }
 //-------------------------------------------------
+//Data table for showing cart items
+var $cartListTable = $('#cartListTable');
+
+//execute only where this table exists
+
+if($cartListTable.length){
+	//console.log('Inside the table');
+	var jsonUrl = '';
+	 jsonUrl = window.contextRoot + '/json/data/cart/'+ window.cartId +'/items';
+
+	
+	 $cartListTable.DataTable({
+			lengthMenu : [[10,30,50,-1],['10 ','30 ','50 ','ALL']],
+			pageLength: 10,
+		ajax: {
+			url: jsonUrl,
+			dataSrc: ''
+		},
+	columns: [
+	          
+				{
+					  data: 'cartId',  
+					  mRender: function(data,type,row){ 
+					  return '<font color="#fd6239"><b>' + data +'</b></font>';
+				 }
+				},
+	          {
+	        	  data: 'prodId',
+	        	  bSortable: false,
+	        	  mRender: function(data,type,row){
+	        		  return '<font color="#fd6239"><b>'+data+'</b></font>';
+	        	  }
+	          },
+	          {
+	        	  data: 'buyingPrice',  
+	        		  mRender: function(data,type,row){
+	        			  return '<font color="#fd6239"><b>&#8377;' + data +'</b></font>';
+	        		  }
+	          },
+	          {
+	        	  data: 'quantity' ,
+	        		  mRender: function(data,type,row){
+	        			  return '<font color="#fd6239"><b>' + data +'</b></font>';
+	        		  }
+	          },
+	          {
+	        	  data: 'total',
+	        	  mRender: function(data,type,row){
+	        		  return '<font color="#fd6239"><b>&#8377;' + data +'</b></font>';
+	        	  }
+	          },
+	         
+	          {
+	        	  data: 'id',
+	        	  mRender: function(data,type,row){
+	        		 var str = '';
+	        		 str += '<a href="'+window.contextRoot+'/cart/'+data+'/remove" class="btn btn-warning"><span class="glyphicon glyphicon-trash"></span></a>';
+	        		 
+	        	 return str; 
+	        	  }
+	          }
+	      
+	          ]
+	        
+		
+	});
+}
 
 
+
+
+//--------------------------------------------------------------
 });
 		

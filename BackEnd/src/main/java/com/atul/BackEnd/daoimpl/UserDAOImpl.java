@@ -121,4 +121,17 @@ public class UserDAOImpl implements UserDAO {
 
 	}
 
+	@Override
+	public Cart getCartById(int cartId) {
+		String selectQuery = "FROM Cart WHERE id = :cartId";
+
+		try {
+			return sessionFactory.getCurrentSession().createQuery(selectQuery, Cart.class).setParameter("cartId",cartId)
+					.getSingleResult();
+		} catch (Exception ex) {
+			 ex.printStackTrace();
+			return null;
+		}
+	}
+
 }

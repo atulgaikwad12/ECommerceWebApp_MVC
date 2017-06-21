@@ -11,6 +11,7 @@ public interface UserDAO {
 	List<User> list();
 	User getByEmail(String email);
 	User getById(int userId);
+	Cart getCartById(int cartId);
 	boolean addUser(User user);
 	
 	boolean addAddres(Address address);

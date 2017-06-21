@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.atul.BackEnd.dao.CartlineDAO;
 import com.atul.BackEnd.dto.CartLine;
+import com.atul.BackEnd.dto.Product;
 import com.atul.BackEnd.dto.User;
 
 @Repository("cartlineDAO")
@@ -87,5 +88,19 @@ public class CartLineDAOImpl implements CartlineDAO {
 		}
 	
 	}
+
+	@Override
+	public CartLine getById(int id) {
+		try{
+			return sessionFactory.getCurrentSession().get(CartLine.class,Integer.valueOf(id));	
+			}
+			catch(Exception ex){
+				ex.printStackTrace();
+				
+			}
+			return null;
+	}
+
+	
 
 }

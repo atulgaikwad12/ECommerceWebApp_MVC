@@ -44,7 +44,7 @@
 			<ul class="dropdown-menu">
 			 <security:authorize access="hasAuthority('USER')">	
 				<li>
-				<a href="${contextRoot}/cart">
+				<a href="${contextRoot}/cart/${userModel.id}/show">
 				<span class="glyphicon glyphicon-shopping-cart"></span>
 				<span class="badge">${userModel.cart.cartLines}</span>
 				- &#8377;  ${userModel.cart.grandTotal}
@@ -52,9 +52,14 @@
 				</li>
 			</security:authorize>
 			<li class="divider" role="separator"></li>
+			<security:authorize access="hasAuthority('USER')">	
+			<li>
+			<a href="${contextRoot}/perform-refresh"> Refresh </a>
+			</li>
+			</security:authorize>
 			<li>
 			<a href="${contextRoot}/perform-logout"> Logout </a>
-			</li>
+			</li>			
 			</ul>
 			</li>
 			</security:authorize>
